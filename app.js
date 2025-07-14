@@ -66,11 +66,12 @@ const updateUI = (winner, userChoice, computerChoice) => {
       const winner = determineWinner(userChoice, computerChoice);
       updateUI(winner, userChoice, computerChoice);
     };
-    const imageMap = {
-    rock: "/images/rock.jpg",
-    paper: "/images/paper.jpg",
-    scissors: "/images/scissor.jpg"
-   };
+   const imageMap = {
+  rock: "images/rock.jpg",
+  paper: "images/paper.jpg",
+  scissors: "images/scissor.jpg"
+};
+
   
     choices.forEach((choice) => {
       choice.addEventListener("click", () => {
@@ -78,3 +79,4 @@ const updateUI = (winner, userChoice, computerChoice) => {
         playGame(userChoice);
       });
     });
+    
