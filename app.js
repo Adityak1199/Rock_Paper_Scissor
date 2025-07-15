@@ -28,7 +28,7 @@ const updateUI = (winner, userChoice, computerChoice) => {
   // Show "User vs Computer" layout
   const vsContainer = document.getElementById("vs-container");
   vsContainer.innerHTML = `
-    <div class="flex flex-col items-center bg-gray-200 p-4 rounded-xl shadow-md">
+    <div class="flex flex-col items-center p-4 rounded-xl shadow-md">
       <p class="text-lg font-semibold mb-2">You chose:</p>
       <img src="${imageMap[userChoice]}" alt="${userChoice}" class="w-24 h-24 rounded-full opacity-100" />
       <span class="mt-2 text-xl font-bold capitalize">${userChoice}</span>
@@ -36,7 +36,7 @@ const updateUI = (winner, userChoice, computerChoice) => {
 
     <p class="text-3xl font-bold text-gray-600">VS</p>
 
-    <div class="flex flex-col items-center bg-gray-200 p-4 rounded-xl shadow-md">
+    <div class="flex flex-col items-center p-4 rounded-xl shadow-md">
       <p class="text-lg font-semibold mb-2">Computer chose:</p>
       <img src="${imageMap[computerChoice]}" alt="${computerChoice}" class="w-24 h-24 rounded-full opacity-100" />
       <span class="mt-2 text-xl font-bold capitalize">${computerChoice}</span>
@@ -66,6 +66,7 @@ const updateUI = (winner, userChoice, computerChoice) => {
       const winner = determineWinner(userChoice, computerChoice);
       updateUI(winner, userChoice, computerChoice);
     };
+
    const imageMap = {
   rock: "images/rock.jpg",
   paper: "images/paper.jpg",
@@ -80,3 +81,11 @@ const updateUI = (winner, userChoice, computerChoice) => {
       });
     });
     
+    document.querySelector(".reset").addEventListener("click", () => {
+   userScore = 0;
+   computerScore = 0;
+   playerScoreSpan.textContent = userScore;
+   computerScoreSpan.textContent = computerScore;
+    const vsContainer = document.getElementById("vs-container");
+  vsContainer.innerHTML = ` `;
+});
