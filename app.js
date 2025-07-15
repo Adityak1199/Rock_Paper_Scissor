@@ -28,15 +28,15 @@ const updateUI = (winner, userChoice, computerChoice) => {
   // Show "User vs Computer" layout
   const vsContainer = document.getElementById("vs-container");
   vsContainer.innerHTML = `
-    <div class="flex flex-col items-center p-4 rounded-xl shadow-md">
+    <div class="flex flex-col items-center md:p-4 sm:p-1 rounded-xl shadow-md">
       <p class="text-lg font-semibold mb-2">You chose:</p>
       <img src="${imageMap[userChoice]}" alt="${userChoice}" class="w-24 h-24 rounded-full opacity-100" />
       <span class="mt-2 text-xl font-bold capitalize">${userChoice}</span>
     </div>
 
-    <p class="text-3xl font-bold text-gray-600">VS</p>
+    <p class="text-3xl mx-2 font-bold text-gray-600">VS</p>
 
-    <div class="flex flex-col items-center p-4 rounded-xl shadow-md">
+    <div class="flex flex-col items-center md:p-4 sm:p-1 rounded-xl shadow-md">
       <p class="text-lg font-semibold mb-2">Computer chose:</p>
       <img src="${imageMap[computerChoice]}" alt="${computerChoice}" class="w-24 h-24 rounded-full opacity-100" />
       <span class="mt-2 text-xl font-bold capitalize">${computerChoice}</span>
